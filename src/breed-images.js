@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "@reach/router";
 
 const BreedImages = ({ breed, count }) => {
   const [state, setState] = useState({ loading: true, error: null, data: [] });
@@ -15,7 +16,13 @@ const BreedImages = ({ breed, count }) => {
   }, [breed, count]);
 
   const images = state.data.map(url => {
-    return <img src={url} key={url} />;
+    const split = url.split("/");
+    const id = `${split[4]}-${split[5]}`;
+    return (
+      <Link to={`/details/${id}`}>
+        <img src={url} key={url} />
+      </Link>
+    );
   });
   return <div className="jumbotron">{images}</div>;
 };

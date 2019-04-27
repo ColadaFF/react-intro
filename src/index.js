@@ -1,20 +1,29 @@
 import React from "react";
 import { render } from "react-dom";
-import Pet from "./Pet";
+import { Router } from "@reach/router";
 import BreedContainer from "./breed-container";
+import Details from "./details";
 
 const Title = props => {
   return <h1>{props.label}</h1>;
 };
 
-const App = () => {
-  // <h1>Hello World</h1>
+const Home = () => {
   return (
     <div>
       <Title label="Adoptame!" />
       <BreedContainer />
-      <Pet name="Luna" animal="Dog" breed="Basset" />
     </div>
+  );
+};
+
+const App = () => {
+  // <h1>Hello World</h1>
+  return (
+    <Router>
+      <Home path="/" />
+      <Details path="/details/:id" />
+    </Router>
   );
 };
 

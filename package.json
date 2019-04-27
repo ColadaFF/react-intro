@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ColadaFF/react-intro#readme",
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
