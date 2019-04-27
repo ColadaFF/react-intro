@@ -1,0 +1,24 @@
+{
+  "name": "react-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColadaFF/react-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColadaFF/react-intro/issues"
+  },
+  "homepage": "https://github.com/ColadaFF/react-intro#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0"
+  }
+}
