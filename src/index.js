@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import Pet from "./Pet";
-import BreedSelect from "./breed-select";
+import BreedContainer from "./breed-container";
 
 const Title = props => {
   return <h1>{props.label}</h1>;
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <Title label="Adoptame!" />
-      <BreedSelect />
+      <BreedContainer />
       <Pet name="Luna" animal="Dog" breed="Basset" />
     </div>
   );

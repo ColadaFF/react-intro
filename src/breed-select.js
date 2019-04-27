@@ -5,8 +5,7 @@ class BreedSelect extends React.Component {
   state = {
     loading: true,
     data: {},
-    error: null,
-    selected: ""
+    error: null
   };
 
   componentDidMount() {
@@ -27,14 +26,9 @@ class BreedSelect extends React.Component {
     );
   }
 
-  handleChangeSelect = e => {
-    this.setState({
-      selected: e.target.value
-    });
-  };
-
   render() {
-    const { loading, data, error, selected } = this.state;
+    const { loading, data, error } = this.state;
+    const { value, onChange } = this.props;
     if (loading) {
       return <h1>Loading ...</h1>;
     } else {
@@ -53,8 +47,8 @@ class BreedSelect extends React.Component {
         <select
           id="breed-select"
           className="form-control"
-          value={selected}
-          onChange={this.handleChangeSelect}
+          value={value}
+          onChange={onChange}
         >
           <option value="">Choose...</option>
           {breedOptions}
