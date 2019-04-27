@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const BreedImages = ({ breed, count = 3 }) => {
+const BreedImages = ({ breed, count }) => {
   const [state, setState] = useState({ loading: true, error: null, data: [] });
   const setData = response =>
     setState({ loading: false, data: response.data.message });
@@ -12,7 +12,7 @@ const BreedImages = ({ breed, count = 3 }) => {
       const url = `https://dog.ceo/api/breed/${breed}/images/random/${count}`;
       axios.get(url).then(setData, setError);
     }
-  }, [breed]);
+  }, [breed, count]);
 
   const images = state.data.map(url => {
     return <img src={url} key={url} />;
